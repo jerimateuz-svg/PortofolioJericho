@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portofolio Saya</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff;
+    color: #111;
+    line-height: 1.6;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  ul {
+    list-style: none;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 10%;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  .nav-links a {
+    font-weight: 500;
+    color: #333;
+    transition: 0.3s;
+  }
+  .nav-links a:hover,
+  .nav-links .active {
+    color: #7a00ff;
+  }
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 10%;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, #e0d9ff 0%, #a16eff 100%);
+    color: #111;
+  }
+  .hero-text {
+    max-width: 550px;
+  }
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+  .hero-text h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 20px 0;
+  }
+  .highlight {
+    color: #7a00ff;
+  }
+  .subtext {
+    color: #333;
+    margin-bottom: 30px;
+  }
+  .buttons {
+    display: flex;
+    gap: 15px;
+  }
+  .btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+  }
+  .btn.primary {
+    background-color: #111;
+    color: #fff;
+  }
+  .btn.secondary {
+    background-color: #eee;
+    color: #111;
+  }
+  .btn.primary:hover {
+    background-color: #333;
+  }
+  .btn.secondary:hover {
+    background-color: #ddd;
+  }
+  .hero-img img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #7a00ff;
+    box-shadow: 0 0 30px rgba(122, 0, 255, 0.3);
+  }
+  section {
+    padding: 60px 10%;
+    background-color: #f9f9f9;
+  }
+  section:nth-child(even) {
+    background-color: #ffffff;
+  }
+  section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #222;
+  }
+  section p,
+  section ul li {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  .project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .project-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease;
+  }
+  .project-card:hover {
+    box-shadow: 0 6px 15px rgba(122,0,255,0.3);
+  }
+  .project-card h3 {
+    margin-bottom: 10px;
+    color: #7a00ff;
+  }
+  .project-card p {
+    margin-bottom: 15px;
+    color: #444;
+  }
+  .project-card a {
+    color: #111;
+    font-weight: 600;
+    border: 1px solid #7a00ff;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .project-card a:hover {
+    background-color: #7a00ff;
+    color: #fff;
+  }
+  .languages-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 20px;
+  }
+  .language-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+  }
+  .language-item img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+  .language-item span {
+    font-weight: 600;
+    color: #444;
+  }
+  .footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-img {
+      margin-top: 30px;
+    }
+    .languages-list {
+      justify-content: center;
+    }
+  }
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Jerricho</div>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Beranda</a></li>
+      <li><a href="#projects">Projek</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#languages">Bahasa</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-text">
+      <p>Hai,Saya <strong>Jerricho 👋</strong></p>
+      <h1><span class="highlight">Web</span>Developer</h1>
+      <p class="subtext">
+        Saya membangun website yang cepat, interaktif, dan memiliki desain modern.
+      </p>
+      <div class="buttons">
+        <button class="btn primary">Get In Touch</button>
+        <button class="btn secondary">Browse Projects</button>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="jerricho.jpg" alt="Foto Profil" />
+    </div>
+  </header>
+
+<section class="about" id="about">
+    <h2>Tentang Saya</h2>
+    <p>
+      <div>Nama: Jerricho Lumban Tobing</div>
+          <div>Tempat, Tanggal Lahir: Jakarta, 22 Februari 2009</div>
+          <div>Jenis Kelamin: Laki-laki</div>
+          <div>Alamat: Jl. Slamet Riyadi 4 RT008/RW04</div>
+          <div>Agama: Islam</div>
+          <div>Kewarganegaraan: Indonesia</div>
+          <div>Asal Sekolah: SMKN40 Negeri Jakarta</div>
+          <div>Hobi: Tenis Meja</div>
+          <div>Tools Yang Saya Kuasai: VS</div>
+        </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <h2>Contoh Proyek</h2>
+    <div class="project-list">
+      <div class="project-card">
+        <h3>Aplikasi Kasir</h3>
+        <p>Membuat aplikasi kasir sederhana untuk toko retail dengan fitur pencatatan transaksi dan laporan penjualan.</p>
+        <a href="https://github.com/username/aplikasi-kasir" target="_blank" rel="noopener">Lihat di GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Website Perusahaan</h3>
+        <p>Membangun website perusahaan yang responsif, modern, dan mudah diakses dari berbagai perangkat.</p>
+        <a href="https://username.github.io/website-perusahaan" target="_blank" rel="noopener">Lihat Demo</a>
+      </div>
+      <div class="project-card">
+        <h3>Blog Teknologi</h3>
+        <p>Mengembangkan platform blog dengan sistem manajemen konten sederhana untuk berbagi artikel.</p>
+        <a href="https://github.com/username/blog-teknologi" target="_blank" rel="noopener">Lihat di GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="languages" id="languages">
+    <h2>Bahasa Pemrograman yang Saya Kuasai</h2>
+    <div class="languages-list">
+      <div class="language-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 Logo" />
+        <span>HTML</span>
+      </div>
+      <div class="language-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 Logo" />
+        <span>CSS</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Jerricho. All rights reserved.</p>
+ 
